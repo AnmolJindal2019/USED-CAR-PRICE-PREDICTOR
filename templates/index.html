@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>USED CAR PRICE PREDICTIOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}" />
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>USED CAR PRICE PREDICTOR</h1>
+  </div>
+
+  <div class="main">
+    <!-- Main Input For Receiving Query to our ML -->
+    <form class="form-inline" method="POST" action="{{ url_for('test') }}">
+
+      <label class="custom-select">
+        Select Region:
+        <select name="region">
+          {% for r in regions %}
+          <option value="{{r}}">{{r}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Manufacturer:
+        <select name="manufacturer">
+          {% for m in manufacturers %}
+          <option value="{{m}}">{{m}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Condition:
+        <select name="condition">
+          {% for c in conditions %}
+          <option value="{{c}}">{{c}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Cylinders:
+        <select name="cylinder">
+          {% for cy in cylinderss %}
+          <option value="{{cy}}">{{cy}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Fuel:
+        <select name="fuel">
+          {% for f in fuels %}
+          <option value="{{f}}">{{f}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Transmission:
+        <select name="transmission">
+          {% for t in transmissions %}
+          <option value="{{t}}">{{t}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Drive:
+        <select name="drive">
+          {% for d in drives %}
+          <option value="{{d}}">{{d}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Size:
+        <select name="size">
+          {% for s in sizes %}
+          <option value="{{s}}">{{s}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Type:
+        <select name="type">
+          {% for t in types %}
+          <option value="{{t}}">{{t}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Select Paint Color:
+        <select name="color">
+          {% for co in colors %}
+          <option value="{{co}}">{{co}}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label class="custom-select">
+        Enter year:
+        <input type="text" name="year" placeholder="year" required="required" />
+      </label>
+
+      <label class="custom-select">
+        Enter Distance covered:
+        <input type="text" name="Kms" placeholder="Kms" required="required" />
+      </label>
+
+      <div class="container">
+        <button class="btn-4" type="submit"><span>Predict</span></button>
+      </div>
+
+    </form>
+  </div>
+
+  <br>
+  <br>
+  <div class="text">
+    Predicted Price is:
+    <span>
+      {{ prediction_text }}
+    </span>
+  </div>
+</body>
+
+<!-- <script type="text/javascript" src="{{url_for('static', filename='jscript.js')}}"></script> -->
+
+</html>
