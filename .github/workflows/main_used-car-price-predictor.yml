@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'USED-CAR-PRICE-PREDICTOR'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4463E7E4D9704FBE8CF9553CB25927D7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8A8EE2CC02A34BC28FF5AA2F57AC0FE8 }}
