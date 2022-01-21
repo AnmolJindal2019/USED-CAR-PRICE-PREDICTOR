@@ -56,6 +56,6 @@ The model is deployed on Azure cloud. Just click the link provided in the 'About
   warnings.filterwarnings('ignore') </br>
 
 ### Contact 
-For any furhter queries feel free to reach out the following contributors. 
+For any further queries feel free to reach out to me. 
 
 Anmol Jindal (anmol19296@iiitd.ac.in) </br>
